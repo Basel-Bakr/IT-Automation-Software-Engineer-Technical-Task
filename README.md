@@ -22,7 +22,7 @@ To login:
 
 To Create task:
 - POST request to /tasks with the JSON format:
--    {  "title" : "name", "description" : "description.",  "start_date" : "date",  "due_date" : "date",  "completion_date" : "date",  "status" : "pending"}
+-     {  "title" : "name", "description" : "description.",  "start_date" : "date",  "due_date" : "date",  "completion_date" : "date",  "status" : "pending"}
 -  In the HTTP header, place the authenticated X-User-ID
 - Expected Outcomes:
 - 201 Created: When task is successfully created (returns a task_id)
@@ -41,7 +41,7 @@ To Get task:
 
 To Update task:
 - PUT request to /tasks/"task_id" with the JSON format:
-- { "title": "Updated title", "description": "updated description.", "start_date": "updated date", "due_date": "updated date",  "completion_date": "updated date", "status": "updated status"}
+-     { "title": "Updated title", "description": "updated description.", "start_date": "updated date", "due_date": "updated date",  "completion_date": "updated date", "status": "updated status"}
 - Expected outcomes:
 - 200 OK: When the task is successfully updated
 - 400 Bad Request: If no update data is provided
@@ -71,7 +71,7 @@ To Delete task:
 
 To Batch Delete tasks:
 - DELETE request to /tasks/batch_delete with the JSON format:
-- { "start_date": "date", "end_date": "date" }
+-     { "start_date": "date", "end_date": "date" }
 - Expected outcomes:
 - 200 OK: With a message indicating how many tasks were deleted
 - 400 Bad Request: If required fields (start_date or end_date) are missing, in invalid format, or if start_date > end_date
@@ -89,14 +89,14 @@ To Restore Last Deleted task:
 
 To Subscribe to reports:
 - POST request to /subscribe with the JSON format:
-- {"user_id": 1, "frequency": "desired frequency" }
+-     {"user_id": 1, "frequency": "desired frequency" }
 - Expected outcomes:
 - 201 Created: When the subscription is successfully created (with a confirmation message)
 - 400 Bad Request: If the user_id is missing or if frequency is not one of the allowed values
 
 To Unsubscribe from reports:
 - POST request to /unsubscribe with the JSON format:
-- {  "user_id": 1 }
+-     {  "user_id": 1 }
 - Expected outcomes:
 - 200 OK: When the user is successfully unsubscribed (with a confirmation message)
 - 400 Bad Request: If the user_id is missing from the request
