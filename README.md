@@ -22,7 +22,7 @@ To login:
 
 To Create task:
 - POST request to /tasks with the JSON format:
--  {"title": "name", "description": "description.",  "start_date": "date",  "due_date": "date",  "completion_date": "date",  "status": "pending"}
+-    {  "title" : "name", "description" : "description.",  "start_date" : "date",  "due_date" : "date",  "completion_date" : "date",  "status" : "pending"}
 -  In the HTTP header, place the authenticated X-User-ID
 - Expected Outcomes:
 - 201 Created: When task is successfully created (returns a task_id)
