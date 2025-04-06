@@ -141,9 +141,9 @@ def create_task():
     data = request.get_json()
     title = data.get('title')
     description = data.get('description', '')
-    start_date = data.get('start_date')  # Expected as ISO 8601 string.
-    due_date = data.get('due_date')      # Expected as ISO 8601 string.
-    completion_date = data.get('completion_date')  # Expected as ISO 8601 string, or null.
+    start_date = data.get('start_date') 
+    due_date = data.get('due_date')      
+    completion_date = data.get('completion_date')  
     status = data.get('status', 'pending')
     
     if not title:
@@ -169,9 +169,9 @@ def fetch_tasks():
         return jsonify({'error': 'Invalid X-User-Id header'}), 400
 
     # Optional query parameters.
-    status_filter = request.args.get('status')  # e.g., pending, completed, overdue.
-    date_from = request.args.get('date_from')     # due_date lower bound.
-    date_to = request.args.get('date_to')         # due_date upper bound.
+    status_filter = request.args.get('status')  
+    date_from = request.args.get('date_from')    
+    date_to = request.args.get('date_to')       
 
     query = "SELECT * FROM tasks WHERE user_id = ?"
     params = [auth_user_id]
